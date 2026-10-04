@@ -27,6 +27,10 @@ export interface ScoreRecord {
   submitted: boolean;
   conflict: boolean;
   updatedAt: string;
+  /** 评分修订号：同一评委对同一方案的草稿按修订号合并，旧修订号写入需先提示冲突 */
+  revision: number;
+  /** 评分所依据的权重修订号；权重变更后未提交草稿据此作废重算 */
+  weightRevision: number;
 }
 
 export interface ReviewEvent {
